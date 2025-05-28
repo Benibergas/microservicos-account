@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public interface AccountController {
 
     @PostMapping("/account")
-    public ResponseEntity<ProductOut> create(
-        @RequestBody ProductIn accountIn
+    public ResponseEntity<AccountOut> create(
+        @RequestBody AccountIn accountIn
     );
 
     @GetMapping("/account")
-    public ResponseEntity<List<ProductOut>> findAll();
+    public ResponseEntity<List<AccountOut>> findAll();
 
     @PostMapping("/account/login")
-    public ResponseEntity<ProductOut> findByEmailAndPassword(
-        @RequestBody ProductIn accountIn
+    public ResponseEntity<AccountOut> findByEmailAndPassword(
+        @RequestBody AccountIn accountIn
     );
 
     @GetMapping("/account/whoami")
-    public ResponseEntity<ProductOut> whoami(
+    public ResponseEntity<AccountOut> whoami(
         @RequestHeader(value = "id-account", required = true) String idAccount
     );
 
